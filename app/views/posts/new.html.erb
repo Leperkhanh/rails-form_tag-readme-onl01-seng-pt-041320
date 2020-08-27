@@ -1,0 +1,16 @@
+<h3>Post Form</h3>
+
+<%= form_tag posts_path do %>
+    <label for="post_title">Post title:</label>
+    <input type="text" name="post[title]" id="post_title"><br>
+
+    <label for="post_description">Post description:</label>
+    <textarea name="post[description]" id="post_description"></textarea><br>
+
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <input type="submit" value="Submit Post">
+
+<% end %>
+
+<%= params.inspect %>
